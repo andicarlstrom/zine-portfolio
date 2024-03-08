@@ -55,7 +55,7 @@
 //  * @param {*} forceExpanded Optional param to force nav expand behavior when not null
 //  */
 // function toggleMenu(nav, navSections, forceExpanded = null) {
-//   const expanded = forceExpanded !== null ? !forceExpanded : 
+//   const expanded = forceExpanded !== null ? !forceExpanded :
 //   nav.getAttribute('aria-expanded') === 'true';
 //   const button = nav.querySelector('.nav-hamburger button');
 //   document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
