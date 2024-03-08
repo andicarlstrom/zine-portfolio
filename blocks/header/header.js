@@ -42,7 +42,8 @@
 //  * @param {Boolean} expanded Whether the element should be expanded or collapsed
 //  */
 // function toggleAllNavSections(sections, expanded = false) {
-//   sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach((section) => {
+//   sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').
+//   forEach((section) => {
 //     section.setAttribute('aria-expanded', expanded);
 //   });
 // }
@@ -54,7 +55,8 @@
 //  * @param {*} forceExpanded Optional param to force nav expand behavior when not null
 //  */
 // function toggleMenu(nav, navSections, forceExpanded = null) {
-//   const expanded = forceExpanded !== null ? !forceExpanded : nav.getAttribute('aria-expanded') === 'true';
+//   const expanded = forceExpanded !== null ? !forceExpanded : 
+//   nav.getAttribute('aria-expanded') === 'true';
 //   const button = nav.querySelector('.nav-hamburger button');
 //   document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
 //   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
@@ -116,7 +118,8 @@
 
 //   const navSections = nav.querySelector('.nav-sections');
 //   if (navSections) {
-//     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
+//     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach(
+//     (navSection) => {
 //       if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
 //       navSection.addEventListener('click', () => {
 //         if (isDesktop.matches) {
