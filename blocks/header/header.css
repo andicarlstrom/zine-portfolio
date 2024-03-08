@@ -1,4 +1,5 @@
 /* header and nav layout */
+
 /* header .nav-wrapper {
   background-color: var(--background-color);
   width: 100%;
@@ -58,6 +59,7 @@ header nav a:any-link {
 } */
 
 /* hamburger */
+
 /* header nav .nav-hamburger {
   grid-area: hamburger;
   height: 22px;
@@ -139,6 +141,7 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
 } */
 
 /* brand */
+
 /* header .nav-brand {
   grid-area: brand;
   flex-basis: 128px;
@@ -153,6 +156,7 @@ header nav .nav-brand img {
 } */
 
 /* sections */
+
 /* header nav .nav-sections {
   grid-area: sections;
   flex: 1 1 auto;
@@ -270,6 +274,7 @@ header nav .nav-sections ul > li > ul > li {
 } */
 
 /* tools */
+
 /* header nav .nav-tools {
   grid-area: tools;
 } */
