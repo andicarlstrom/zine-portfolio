@@ -63,12 +63,13 @@ header nav .nav-hamburger {
 }
 
 header nav .nav-hamburger button {
-  /* background-color: blue; */
+  background-color: blue;
   height: 22px;
   margin: 0;
   border: 0;
   border-radius: 0;
   padding: 0;
+  
   /* background-color: var(--background-color); */
   color: inherit;
   overflow: initial;
@@ -131,7 +132,9 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
 
 @media (width >= 900px) {
   header nav .nav-hamburger {
+
     /* display: none; */
+
     /* visibility: hidden; */
   }
 }
@@ -140,12 +143,14 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
 
 header .nav-brand {
   grid-area: brand;
+
   /* flex-basis: 128px; */
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
+
   /* width: 100px; */
-  /* background-color: aqua; */
+  background-color: aqua;
 }
 
 header nav .nav-brand img {
@@ -160,7 +165,8 @@ header nav .nav-sections {
   flex: 1 1 auto;
   display: none;
   visibility: hidden;
-  /* background-color: tomato; */
+  background-color: tomato;
+
   /* background-color: var(--overlay-color); */
 }
 
