@@ -1,6 +1,6 @@
 /* header and nav layout */
 
-/* header .nav-wrapper {
+header .nav-wrapper {
   background-color: var(--background-color);
   width: 100%;
   z-index: 2;
@@ -56,11 +56,11 @@ header nav p {
 
 header nav a:any-link {
   color: currentcolor;
-} */
+}
 
 /* hamburger */
 
-/* header nav .nav-hamburger {
+header nav .nav-hamburger {
   grid-area: hamburger;
   height: 22px;
   display: flex;
@@ -138,11 +138,11 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
     display: none;
     visibility: hidden;
   }
-} */
+}
 
 /* brand */
 
-/* header .nav-brand {
+header .nav-brand {
   grid-area: brand;
   flex-basis: 128px;
   font-size: var(--heading-font-size-s);
@@ -153,11 +153,11 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
 header nav .nav-brand img {
   width: 128px;
   height: auto;
-} */
+}
 
 /* sections */
 
-/* header nav .nav-sections {
+header nav .nav-sections {
   grid-area: sections;
   flex: 1 1 auto;
   display: none;
@@ -271,10 +271,10 @@ header nav .nav-sections ul > li > ul > li {
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
     padding: 8px 0;
   }
-} */
+}
 
 /* tools */
 
-/* header nav .nav-tools {
+header nav .nav-tools {
   grid-area: tools;
-} */
+}
