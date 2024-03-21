@@ -2,34 +2,29 @@
 
 header .nav-wrapper {
   background-color: var(--background-color);
+  /* This bkgd color is just for testing purposes */
+  /* background-color: #FE74E8;  */
   width: 100%;
   z-index: 2;
   position: fixed;
 }
 
 header nav {
-  box-sizing: border-box;
-  display: grid;
-  grid-template:
-    'hamburger brand tools' var(--nav-height)
-    'sections sections sections' 1fr / auto 1fr auto;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 0 2em;
-  margin: auto;
-  max-width: 1264px;
   height: var(--nav-height);
-  padding: 0 1rem;
   font-family: var(--body-font-family);
 }
 
-header nav[aria-expanded="true"] {
+/* header nav[aria-expanded="true"] {
   grid-template:
     'hamburger brand' var(--nav-height)
     'sections sections' 1fr
     'tools tools' var(--nav-height) / auto 1fr;
   overflow-y: auto;
   min-height: 100vh;
-}
+} */
 
 @media (width >= 600px) {
   header nav {
@@ -68,12 +63,13 @@ header nav .nav-hamburger {
 }
 
 header nav .nav-hamburger button {
+  /* background-color: blue; */
   height: 22px;
   margin: 0;
   border: 0;
   border-radius: 0;
   padding: 0;
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
   color: inherit;
   overflow: initial;
   text-overflow: initial;
@@ -135,8 +131,8 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
 
 @media (width >= 900px) {
   header nav .nav-hamburger {
-    display: none;
-    visibility: hidden;
+    /* display: none; */
+    /* visibility: hidden; */
   }
 }
 
@@ -144,14 +140,16 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
 
 header .nav-brand {
   grid-area: brand;
-  flex-basis: 128px;
+  /* flex-basis: 128px; */
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
+  /* width: 100px; */
+  /* background-color: aqua; */
 }
 
 header nav .nav-brand img {
-  width: 128px;
+  width: 75px;
   height: auto;
 }
 
@@ -162,7 +160,8 @@ header nav .nav-sections {
   flex: 1 1 auto;
   display: none;
   visibility: hidden;
-  background-color: var(--overlay-color);
+  /* background-color: tomato; */
+  /* background-color: var(--overlay-color); */
 }
 
 header nav[aria-expanded="true"] .nav-sections {
