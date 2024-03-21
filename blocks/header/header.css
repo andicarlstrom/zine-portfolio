@@ -2,7 +2,9 @@
 
 header .nav-wrapper {
   background-color: var(--background-color);
+
   /* This bkgd color is just for testing purposes */
+  
   /* background-color: #FE74E8;  */
   width: 100%;
   z-index: 2;
