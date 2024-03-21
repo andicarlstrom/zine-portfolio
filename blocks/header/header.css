@@ -151,6 +151,7 @@ header .nav-brand {
   line-height: 1;
 
   /* width: 100px; */
+
   /* background-color: aqua; */
 }
 
@@ -166,8 +167,9 @@ header nav .nav-sections {
   flex: 1 1 auto;
   display: none;
   visibility: hidden;
-  /* background-color: tomato; */
 
+  /* background-color: tomato; */
+  
   /* background-color: var(--overlay-color); */
 }
 
