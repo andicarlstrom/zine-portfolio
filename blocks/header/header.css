@@ -65,7 +65,7 @@ header nav .nav-hamburger {
 }
 
 header nav .nav-hamburger button {
-  background-color: blue;
+  /* background-color: blue; */
   height: 22px;
   margin: 0;
   border: 0;
@@ -151,7 +151,7 @@ header .nav-brand {
   line-height: 1;
 
   /* width: 100px; */
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 
 header nav .nav-brand img {
@@ -166,7 +166,7 @@ header nav .nav-sections {
   flex: 1 1 auto;
   display: none;
   visibility: hidden;
-  background-color: tomato;
+  /* background-color: tomato; */
 
   /* background-color: var(--overlay-color); */
 }
