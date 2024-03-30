@@ -17,9 +17,9 @@ function toggleMenu() {
   nav.setAttribute('aria-expanded', expanded);
   console.log(isDesktop)
 
-  if(isDesktop.matches) {
+  // if(isDesktop.matches) {
     applyDelay(expanded, links);
-  }
+  // }
 }
 
 function setupLinks() {
