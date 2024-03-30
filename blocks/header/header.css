@@ -1,5 +1,109 @@
 /* header and nav layout */
 /* MOBILE */
+nav {
+  background-color: #FE74E8;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid #232323;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 20px;
+}
+
+.nav-brand,
+.nav-breadcrumb,
+.nav-hamburger {
+    z-index: 1;
+}
+
+.nav-breadcrumb {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  padding-top: 10px;
+}
+
+.nav-links .default-content-wrapper {
+  position: fixed;
+  z-index: 0;
+  top: 64px;
+  right: 0; 
+  bottom: 0; 
+  left: 0;
+}
+
+ul {
+  display: flex;
+  flex-flow: column;
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* Show the breadcrumb */
+nav[aria-expanded="false"] .nav-breadcrumb {
+  opacity: 1;
+  transition-delay: 0.7s;
+}
+
+/* Hide the breadcrumb */
+nav[aria-expanded="true"] .nav-breadcrumb {
+  opacity: 0;
+  transition: opacity 0.2s;
+  transition-delay: 0.2s;
+}
+
+nav[aria-expanded="true"] .nav-links .default-content-wrapper ul {
+  animation: slideDown 0.5s backwards;
+}
+
+nav[aria-expanded="false"] .nav-links .default-content-wrapper ul {
+  animation: slideUp 0.5s forwards;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100%); }
+}
+
+li {
+  background-color: #FE74E8;
+  color: #232323;
+  flex-grow: 1;
+  border-bottom: 4px solid #232323;
+  display: flex;
+  align-items: flex-end;
+}
+
+li:hover {
+  background-color: #232323;
+}
+
+a {
+  cursor: default;
+  padding: 20px;
+  text-decoration: none;
+  color: #232323 !important;
+  /* background-color: teal; */
+  text-transform: uppercase;
+}
+
+li:hover a {
+  color: #fff !important; /* Change the text color on hover */
+}
+
+/* Brand */
 .nav-brand {
   grid-area: brand;
   flex-basis: 128px;
@@ -14,15 +118,116 @@ header nav .nav-brand img {
   height: auto;
 }
 
-/* DESKTOP */
-@media (width >= 900px) {
-
+/* hamburger */
+header nav .nav-hamburger {
+  grid-area: hamburger;
+  height: 22px;
+  display: flex;
+  align-items: center;
 }
 
+header nav .nav-hamburger button {
+  /* background-color: blue; */
+  height: 22px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+}
 
+header nav .nav-hamburger-icon,
+header nav .nav-hamburger-icon::before,
+header nav .nav-hamburger-icon::after {
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  width: 20px;
+}
 
+header nav .nav-hamburger-icon::before,
+header nav .nav-hamburger-icon::after {
+  content: '';
+  position: absolute;
+  background: currentcolor;
+}
 
+header nav[aria-expanded="false"] .nav-hamburger-icon,
+header nav[aria-expanded="false"] .nav-hamburger-icon::before,
+header nav[aria-expanded="false"] .nav-hamburger-icon::after {
+  height: 2px;
+  border-radius: 2px;
+  background: currentcolor;
+}
 
+header nav[aria-expanded="false"] .nav-hamburger-icon::before {
+  top: -6px;
+}
+
+header nav[aria-expanded="false"] .nav-hamburger-icon::after {
+  top: 6px;
+}
+
+header nav[aria-expanded="true"] .nav-hamburger-icon {
+  height: 22px;
+}
+
+header nav[aria-expanded="true"] .nav-hamburger-icon::before,
+header nav[aria-expanded="true"] .nav-hamburger-icon::after {
+  top: 3px;
+  left: 1px;
+  transform: rotate(45deg);
+  transform-origin: 2px 1px;
+  width: 24px;
+  height: 2px;
+  border-radius: 2px;
+}
+
+header nav[aria-expanded="true"] .nav-hamburger-icon::after {
+  top: unset;
+  bottom: 3px;
+  transform: rotate(-45deg);
+}
+
+/* DESKTOP */
+@media (width >= 900px) {
+  nav {
+    background-color: transparent;
+    border: none;
+  }
+  
+  .nav-links .default-content-wrapper {
+    top: 0;
+  }
+
+  nav[aria-expanded="true"] .nav-links .default-content-wrapper ul {
+    animation: none;
+  }
+  
+  nav[aria-expanded="false"] .nav-links .default-content-wrapper ul {
+    animation: none;
+  }
+
+  nav[aria-expanded="true"] .nav-links .default-content-wrapper ul li {
+    animation: slideDown 0.5s backwards;
+  }
+  
+  nav[aria-expanded="false"] .nav-links .default-content-wrapper ul li {
+    animation: slideUp 0.5s forwards;
+  }
+  
+  ul {
+    flex-flow: row;
+  }
+  
+  li {
+    border-right: 4px solid #232323;
+    border-bottom: none;
+  }
+
+  ul li:last-child {
+    border-right: none;
+  }
+}
 
 /* --------------------------- */
 
@@ -81,31 +286,16 @@ header nav a:any-link {
   color: currentcolor;
 } */
 
-/* hamburger */
 
-/* header nav .nav-hamburger {
-  grid-area: hamburger;
-  height: 22px;
-  display: flex;
-  align-items: center;
-}
-
-header nav .nav-hamburger button {
-  background-color: blue;
-  height: 22px;
-  margin: 0;
-  border: 0;
-  border-radius: 0;
-  padding: 0; */
   
   /* background-color: var(--background-color); */
   /* color: inherit;
   overflow: initial;
   text-overflow: initial;
   white-space: initial;
-}
+} */
 
-header nav .nav-hamburger-icon,
+/* header nav .nav-hamburger-icon,
 header nav .nav-hamburger-icon::before,
 header nav .nav-hamburger-icon::after {
   box-sizing: border-box;
@@ -150,9 +340,9 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
   width: 24px;
   height: 2px;
   border-radius: 2px;
-} */
+}
 
-/* header nav[aria-expanded="true"] .nav-hamburger-icon::after {
+header nav[aria-expanded="true"] .nav-hamburger-icon::after {
   top: unset;
   bottom: 3px;
   transform: rotate(-45deg);
