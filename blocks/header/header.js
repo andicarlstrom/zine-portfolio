@@ -4,9 +4,10 @@ import { loadFragment } from '../fragment/fragment.js';
 // // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
 
-function applyDelay(expanded, links) { 
+function applyAnimation(expanded, links) {
   links.querySelectorAll('li').forEach((link) => {
-    link.style.animationDelay = expanded ? `${link.dataset.trueDelay}s` : `${link.dataset.falseDelay}s`
+    link.className = 'animate';
+    link.style.animationDelay = expanded ? `${link.dataset.trueDelay}s` : `${link.dataset.falseDelay}s`;
   });
 }
 
@@ -15,11 +16,7 @@ function toggleMenu() {
   const links = document.querySelector('.nav-links .default-content-wrapper');
   let expanded = nav.getAttribute('aria-expanded') !== 'true';
   nav.setAttribute('aria-expanded', expanded);
-  console.log(isDesktop)
-
-  // if(isDesktop.matches) {
-    applyDelay(expanded, links);
-  // }
+  applyAnimation(expanded, links)
 }
 
 function setupLinks() {
@@ -33,19 +30,20 @@ function setupLinks() {
   navItems.forEach((item, i) => {  
     item.dataset.trueDelay = step * (i + 1);
     item.dataset.falseDelay = duration - (step * i);
+
+    if(window.location.pathname !== '/') { 
+      item.className = 'hideMenu';
+    }
     
-    item.addEventListener('click', () => {      
-      // Toggle the menu before navigating
-      toggleMenu();
-      
-      // Get the child anchor element (a) within the list item
+    item.addEventListener('click', (event) => {   
       const link = item.querySelector('a');
-      
-      // Delay navigation to allow time for the menu to close
+      const url = link.getAttribute('href');
+
+      toggleMenu();
+
       setTimeout(() => {
-          // Navigate to the URL specified in the anchor element's href attribute
-          window.location.href = link.href;
-      }, 300); // Adjust the delay time as needed 
+        window.location.href = url;
+      }, ((duration + .2) + step) * 1000); // The timeout is delayed dynamically based on the total number of list items.
     });
   });
 }
@@ -77,6 +75,7 @@ export default async function decorate(block) {
   const nav = document.createElement('nav');
   nav.id = 'nav';
   nav.ariaExpanded = window.location.pathname === '/' ? 'true' : 'false';
+  
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
   // The classes for the sections that the user adds to the google doc
