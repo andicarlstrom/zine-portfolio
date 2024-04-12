@@ -31,7 +31,7 @@ nav[aria-expanded="false"] {
 .nav-breadcrumb {
   position: fixed;
   top: 0;
-  left: 50%;
+  left: 40%;
   padding-top: 16px;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
@@ -91,7 +91,10 @@ nav[aria-expanded="false"] .nav-links .default-content-wrapper ul {
 }
 
 li {
-  background-color: #FE74E8;
+  background-color: #E01783;
+  /* background-color: #fd2374; */
+  /* background-color: #eb57ad; */
+  /* background-color: #FE74E8; */
   color: #232323;
   flex-grow: 1;
   border-bottom: 4px solid #232323;
@@ -154,12 +157,12 @@ header nav .nav-hamburger {
 }
 
 header nav .nav-hamburger button {
-  /* background-color: blue; */
   height: 22px;
   margin: 0;
   border: 0;
   border-radius: 0;
   padding: 0;
+  background: transparent;
 }
 
 header nav .nav-hamburger-icon,
@@ -175,7 +178,8 @@ header nav .nav-hamburger-icon::before,
 header nav .nav-hamburger-icon::after {
   content: '';
   position: absolute;
-  background: currentcolor;
+  /* background: currentcolor; */
+  background-color: #232323;
 }
 
 header nav[aria-expanded="false"] .nav-hamburger-icon,
@@ -183,7 +187,7 @@ header nav[aria-expanded="false"] .nav-hamburger-icon::before,
 header nav[aria-expanded="false"] .nav-hamburger-icon::after {
   height: 2px;
   border-radius: 2px;
-  background: currentcolor;
+  background-color: #232323;
 }
 
 header nav[aria-expanded="false"] .nav-hamburger-icon::before {
@@ -224,6 +228,14 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
   
   .nav-links .default-content-wrapper {
     top: 0;
+  }
+
+  .nav-breadcrumb {
+    left: 50%;
+  }
+
+  nav[aria-expanded="true"] {
+    background-color: transparent;
   }
 
   nav[aria-expanded="true"] .nav-links .default-content-wrapper ul {
