@@ -400,14 +400,19 @@ function decorateButtons(element) {
  * @param {string} [alt] alt text to be added to icon
  */
 function decorateIcon(span, prefix = '', alt = '') {
+  console.log("🚀 ~ decorateIcon ~ alt:", alt)
+  console.log("🚀 ~ decorateIcon ~ prefix:", prefix)
+  console.log("🚀 ~ decorateIcon ~ span:", span)
   const iconName = Array.from(span.classList)
     .find((c) => c.startsWith('icon-'))
     .substring(5);
+    console.log('iconName', iconName)
   const img = document.createElement('img');
   img.dataset.iconName = iconName;
   img.src = `${window.hlx.codeBasePath}${prefix}/icons/${iconName}.svg`;
   img.alt = alt;
   img.loading = 'lazy';
+  console.log('img', img)
   span.append(img);
 }
 
@@ -418,6 +423,7 @@ function decorateIcon(span, prefix = '', alt = '') {
  */
 function decorateIcons(element, prefix = '') {
   const icons = [...element.querySelectorAll('span.icon')];
+  console.log("🚀 ~ decorateIcons ~ icons:", icons)
   icons.forEach((span) => {
     decorateIcon(span, prefix);
   });
