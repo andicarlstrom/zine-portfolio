@@ -98,7 +98,7 @@ li {
   display: flex;
   flex-flow: column;
   flex-direction: column-reverse;
-  font-family: "Montserrat", sans-serif;
+  font-family: Montserrat, sans-serif;
   text-transform: uppercase;
   letter-spacing: 4px;
   font-weight: bold;
@@ -180,6 +180,7 @@ header nav .nav-hamburger-icon::before,
 header nav .nav-hamburger-icon::after {
   content: '';
   position: absolute;
+  
   /* background: currentcolor; */
   background-color: #232323;
 }
@@ -283,9 +284,11 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
     0% {
       transform: translateY(0);
     }
+
     50% {
       transform: translateY(-5px);
     }
+
     100% {
       transform: translateY(0);
     }
