@@ -32,7 +32,7 @@ function setupLinks() {
     item.dataset.falseDelay = duration - (step * i);
 
     if (window.location.pathname !== '/') {
-      item.className = 'hideMenu';
+      item.className = 'hide-menu';
     }
 
     item.addEventListener('click', () => {

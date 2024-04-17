@@ -73,19 +73,19 @@ nav[aria-expanded="true"] .nav-breadcrumb {
 }
 
 nav[aria-expanded="true"] .nav-links .default-content-wrapper ul {
-  animation: slideDown 0.5s backwards;
+  animation: slide-down 0.5s backwards;
 }
 
 nav[aria-expanded="false"] .nav-links .default-content-wrapper ul {
-  animation: slideUp 0.5s forwards;
+  animation: slide-up 0.5s forwards;
 }
 
-@keyframes slideDown {
+@keyframes slide-down {
   from { transform: translateY(-100dvh); }
   to { transform: translateY(0); }
 }
 
-@keyframes slideUp {
+@keyframes slide-up {
   from { transform: translateY(0); }
   to { transform: translateY(-100dvh); }
 }
@@ -117,7 +117,7 @@ li:hover {
   background-color: #232323;
 }
 
-li.hideMenu {
+li.hide-menu {
   /* dvh is device height and this needs to be applied because in mobile (IOS) there are navigation heights that are applied to the bottom and top of the viewport that  */
   transform: translateY(-100dvh);
 }
@@ -180,7 +180,7 @@ header nav .nav-hamburger-icon::before,
 header nav .nav-hamburger-icon::after {
   content: '';
   position: absolute;
-  
+
   /* background: currentcolor; */
   background-color: #232323;
 }
@@ -254,11 +254,11 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
   }
 
   nav[aria-expanded="true"] .nav-links .default-content-wrapper ul li.animate {
-    animation: slideDown 0.5s backwards;
+    animation: slide-down 0.5s backwards;
   }
   
   nav[aria-expanded="false"] .nav-links .default-content-wrapper ul li.animate {
-    animation: slideUp 0.5s forwards;
+    animation: slide-up 0.5s forwards;
   }
   
   li {
@@ -277,10 +277,10 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
   }
 
   li .icon:hover {
-    animation: moveUpDown 1s infinite alternate;
+    animation: move-up-down 1s infinite alternate;
   }
 
-  @keyframes moveUpDown {
+  @keyframes move-up-down {
     0% {
       transform: translateY(0);
     }
