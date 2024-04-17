@@ -33,7 +33,7 @@ nav[aria-expanded="false"] {
   top: 0;
   left: 40%;
   padding-top: 16px;
-  font-family: "Montserrat", sans-serif;
+  font-family: Montserrat, sans-serif;
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 4px;
@@ -105,6 +105,14 @@ li {
   font-size: 28px;
 }
 
+a {
+  cursor: default;
+  padding: 20px;
+  text-decoration: none;
+  color: #232323 !important;
+  text-transform: uppercase;
+}
+
 li:hover {
   background-color: #232323;
 }
@@ -125,14 +133,6 @@ li:last-child {
 
 li .icon {
   display: none;
-}
-
-a {
-  cursor: default;
-  padding: 20px;
-  text-decoration: none;
-  color: #232323 !important;
-  text-transform: uppercase;
 }
 
 /* Brand */
@@ -240,6 +240,10 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
     background-color: transparent;
   }
 
+  ul {
+    flex-flow: row;
+  }
+
   nav[aria-expanded="true"] .nav-links .default-content-wrapper ul {
     animation: none;
   }
@@ -254,10 +258,6 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
   
   nav[aria-expanded="false"] .nav-links .default-content-wrapper ul li.animate {
     animation: slideUp 0.5s forwards;
-  }
-  
-  ul {
-    flex-flow: row;
   }
   
   li {
