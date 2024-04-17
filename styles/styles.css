@@ -176,8 +176,6 @@ main img {
 
 .icon {
   display: inline-block;
-  height: 24px;
-  width: 24px;
 }
 
 .icon img {
@@ -198,8 +196,8 @@ main .section {
 
 @media (width >= 900px) {
   .section > div {
-    max-width: 1200px;
-    margin: auto;
+    display: flex;
+    justify-content: center;
   }
 }
 
