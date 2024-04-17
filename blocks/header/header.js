@@ -23,8 +23,8 @@ function setupLinks() {
   // Get all list items in the navigation menu
   const navItems = document.querySelectorAll('.nav-links ul li');
 
-   const duration = .5;
-   const step = duration / navItems.length;
+  const duration = 0.5;
+  const step = duration / navItems.length;
 
   // Add click event listener to each list item
   navItems.forEach((item, i) => {
@@ -44,13 +44,13 @@ function setupLinks() {
       setTimeout(() => {
         window.location.href = url;
         // The timeout is delayed dynamically based on the total number of list items.
-      }, ((duration + .2) + step) * 1000);
+      }, ((duration + 0.2) + step) * 1000);
     });
   });
 }
 
 function decorateBreadcrumb() {
-  const path = window.location.pathname
+  const path = window.location.pathname;
   const pageName = path.split('/')[1];
   const nav = document.querySelector('nav');
 
@@ -76,12 +76,12 @@ export default async function decorate(block) {
   const nav = document.createElement('nav');
   nav.id = 'nav';
   nav.ariaExpanded = window.location.pathname === '/' ? 'true' : 'false';
-  
+
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
   // The classes for the sections that the user adds to the google doc
   const classes = ['brand', 'links'];
-    classes.forEach((c, i) => {
+  classes.forEach((c, i) => {
     const section = nav.children[i];
     if (section) section.classList.add(`nav-${c}`);
   });
@@ -91,9 +91,9 @@ export default async function decorate(block) {
   hamburger.className = 'nav-hamburger';
   hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
       <span class="nav-hamburger-icon"></span>
-  </button>`
-  hamburger.addEventListener('click', () => toggleMenu())
-  nav.append(hamburger)
+  </button>`;
+  hamburger.addEventListener('click', () => toggleMenu());
+  nav.append(hamburger);
 
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
