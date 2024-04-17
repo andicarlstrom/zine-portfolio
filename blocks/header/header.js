@@ -27,15 +27,15 @@ function setupLinks() {
    const step = duration / navItems.length;
 
   // Add click event listener to each list item
-  navItems.forEach((item, i) => {  
+  navItems.forEach((item, i) => {
     item.dataset.trueDelay = step * (i + 1);
     item.dataset.falseDelay = duration - (step * i);
 
-    if(window.location.pathname !== '/') { 
+    if (window.location.pathname !== '/') {
       item.className = 'hideMenu';
     }
 
-    item.addEventListener('click', (event) => {   
+    item.addEventListener('click', () => {
       const link = item.querySelector('a');
       const url = link.getAttribute('href');
 
@@ -43,7 +43,8 @@ function setupLinks() {
 
       setTimeout(() => {
         window.location.href = url;
-      }, ((duration + .2) + step) * 1000); // The timeout is delayed dynamically based on the total number of list items.
+        // The timeout is delayed dynamically based on the total number of list items.
+      }, ((duration + .2) + step) * 1000);
     });
   });
 }
