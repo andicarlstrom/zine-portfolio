@@ -44,9 +44,7 @@ nav[aria-expanded="false"] {
   position: fixed;
   z-index: 0;
   top: 64px;
-  right: 0; 
-  bottom: 0; 
-  left: 0;
+  inset: 0
 }
 
 ul {
