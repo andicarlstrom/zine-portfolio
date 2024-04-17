@@ -2,7 +2,7 @@ import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 // // media query match that indicates mobile/tablet width
-const isDesktop = window.matchMedia('(min-width: 900px)');
+// const isDesktop = window.matchMedia('(min-width: 900px)');
 
 function applyAnimation(expanded, links) {
   links.querySelectorAll('li').forEach((link) => {
@@ -14,15 +14,15 @@ function applyAnimation(expanded, links) {
 function toggleMenu() {
   const nav = document.querySelector('nav');
   const links = document.querySelector('.nav-links .default-content-wrapper');
-  let expanded = nav.getAttribute('aria-expanded') !== 'true';
+  const expanded = nav.getAttribute('aria-expanded') !== 'true';
   nav.setAttribute('aria-expanded', expanded);
-  applyAnimation(expanded, links)
+  applyAnimation(expanded, links);
 }
 
 function setupLinks() {
   // Get all list items in the navigation menu
   const navItems = document.querySelectorAll('.nav-links ul li');
-   
+
    const duration = .5;
    const step = duration / navItems.length;
 
@@ -34,7 +34,7 @@ function setupLinks() {
     if(window.location.pathname !== '/') { 
       item.className = 'hideMenu';
     }
-    
+
     item.addEventListener('click', (event) => {   
       const link = item.querySelector('a');
       const url = link.getAttribute('href');
