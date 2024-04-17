@@ -43,8 +43,8 @@ nav[aria-expanded="false"] {
 .nav-links .default-content-wrapper {
   position: fixed;
   z-index: 0;
-  top: 64px;
   inset: 0;
+  top: 64px;
 }
 
 ul {
