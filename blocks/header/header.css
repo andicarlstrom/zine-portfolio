@@ -275,7 +275,7 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
   }
 
   li .icon:hover {
-    animation: move-up-down 1s infinite alternate;
+    animation: move-up-down 1.5s infinite;
   }
 
   @keyframes move-up-down {
@@ -284,7 +284,7 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
     }
 
     50% {
-      transform: translateY(-5px);
+      transform: translateY(-15px);
     }
 
     100% {
