@@ -66,13 +66,8 @@ function handleLastListItemHamburgerHover() {
   const lastLi = document.querySelector('.nav-links ul li:last-child');
   const hamburger = document.querySelector('.nav-hamburger');
 
-  lastLi.addEventListener('mouseover', function() {
-    hamburger.classList.add('hovered');
-  })
-
-  lastLi.addEventListener('mouseout', function() {
-    hamburger.classList.remove('hovered');
-  })
+  lastLi.addEventListener('mouseover', () => hamburger.classList.add('hovered'));
+  lastLi.addEventListener('mouseout', () => hamburger.classList.remove('hovered'));
 }
 
 /**
