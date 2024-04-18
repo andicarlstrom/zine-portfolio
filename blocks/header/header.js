@@ -62,6 +62,19 @@ function decorateBreadcrumb() {
   nav.insertBefore(breadcrumb, navLinksDiv);
 }
 
+function handleLastListItemHamburgerHover() {
+  const lastLi = document.querySelector('.nav-links ul li:last-child');
+  const hamburger = document.querySelector('.nav-hamburger');
+
+  lastLi.addEventListener('mouseover', function() {
+    hamburger.classList.add('hovered');
+  })
+
+  lastLi.addEventListener('mouseout', function() {
+    hamburger.classList.remove('hovered');
+  })
+}
+
 /**
  * decorates the header, mainly the nav
  * @param {Element} block The header block element
@@ -105,4 +118,7 @@ export default async function decorate(block) {
 
   // Call the function to set up the navigation menu
   setupLinks();
+
+  // Sets up hamburger icon to change color if a user hovers the last nav item.
+  handleLastListItemHamburgerHover();
 }

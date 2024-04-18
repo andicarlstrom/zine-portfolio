@@ -1,6 +1,6 @@
 /* MOBILE */
 nav {
-  background-color: #FE74E8;
+  background-color: #E01783;
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -14,7 +14,7 @@ nav {
 }
 
 nav[aria-expanded="true"] {
-  background-color: #FE74E8;
+  background-color: #E01783;
 }
 
 nav[aria-expanded="false"] {
@@ -276,6 +276,11 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
 
   li .icon:hover {
     animation: move-up-down 1.5s infinite;
+  }
+
+  .nav-hamburger.hovered .nav-hamburger-icon::before,
+  .nav-hamburger.hovered .nav-hamburger-icon::after {
+    background-color: #fffcfb;
   }
 
   @keyframes move-up-down {
