@@ -66,7 +66,7 @@ function setupLogoFirstLiHoverStyles() {
   const firstLi = document.querySelector('.nav-links ul li:first-child');
   const logo = document.querySelector('.nav-brand');
   const spans = logo.querySelectorAll('span');
-  
+
   spans[1].style.display = 'none';
 
   firstLi.addEventListener('mouseover', () => {
@@ -90,22 +90,22 @@ function handleLastListItemHamburgerHover() {
 function setNavArtHoverStyles() {
   const navItems = document.querySelectorAll('.nav-links ul li');
 
-    // Add event listener to each list item
-    navItems.forEach(item => {
-      const spans = item.querySelectorAll('span');
-      // Hide second icon span. We only want one icon displaying at a time.
+  // Add event listener to each list item
+  navItems.forEach(item => {
+    const spans = item.querySelectorAll('span');
+    // Hide second icon span. We only want one icon displaying at a time.
+    spans[1].style.display = 'none';
+
+    item.addEventListener('mouseover', () => {
+      spans[0].style.display = 'none';
+      spans[1].style.display = 'inline';
+    });
+
+    item.addEventListener('mouseout', () => {
+      spans[0].style.display = 'inline';
       spans[1].style.display = 'none';
-
-      item.addEventListener('mouseover', () => {
-        spans[0].style.display = 'none';
-        spans[1].style.display = 'inline';
-      })
-
-      item.addEventListener('mouseout', () => {
-        spans[0].style.display = 'inline';
-        spans[1].style.display = 'none';
-      })
-    })
+    });
+  });
 }
 
 /**
