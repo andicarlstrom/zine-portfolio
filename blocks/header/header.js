@@ -62,12 +62,50 @@ function decorateBreadcrumb() {
   nav.insertBefore(breadcrumb, navLinksDiv);
 }
 
+function setupLogoFirstLiHoverStyles() {
+  const firstLi = document.querySelector('.nav-links ul li:first-child');
+  const logo = document.querySelector('.nav-brand');
+  const spans = logo.querySelectorAll('span');
+  
+  spans[1].style.display = 'none';
+
+  firstLi.addEventListener('mouseover', () => {
+    spans[0].style.display = 'none';
+    spans[1].style.display = 'inline';
+  });
+  firstLi.addEventListener('mouseout', () => {
+    spans[0].style.display = 'inline';
+    spans[1].style.display = 'none';
+  });
+}
+
 function handleLastListItemHamburgerHover() {
   const lastLi = document.querySelector('.nav-links ul li:last-child');
   const hamburger = document.querySelector('.nav-hamburger');
 
   lastLi.addEventListener('mouseover', () => hamburger.classList.add('hovered'));
   lastLi.addEventListener('mouseout', () => hamburger.classList.remove('hovered'));
+}
+
+function setNavArtHoverStyles() {
+  const navItems = document.querySelectorAll('.nav-links ul li');
+
+    // Add event listener to each list item
+    navItems.forEach(item => {
+      const spans = item.querySelectorAll('span');
+      // Hide second icon span. We only want one icon displaying at a time.
+      spans[1].style.display = 'none';
+
+      item.addEventListener('mouseover', () => {
+        spans[0].style.display = 'none';
+        spans[1].style.display = 'inline';
+      })
+
+      item.addEventListener('mouseout', () => {
+        spans[0].style.display = 'inline';
+        spans[1].style.display = 'none';
+      })
+    })
 }
 
 /**
@@ -111,9 +149,15 @@ export default async function decorate(block) {
   // After nav has been added to the DOM, add breadcrumb
   decorateBreadcrumb();
 
-  // Call the function to set up the navigation menu
+  // Sets up the navigation menu for onClick and navigation
   setupLinks();
 
   // Sets up hamburger icon to change color if a user hovers the last nav item.
   handleLastListItemHamburgerHover();
+
+  // Sets up nav art hover styles
+  setNavArtHoverStyles();
+
+  // Sets up logo color changes on hover of first nav item
+  setupLogoFirstLiHoverStyles();
 }
