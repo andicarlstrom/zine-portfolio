@@ -139,6 +139,10 @@ li .icon {
   flex-basis: 128px;
 }
 
+.nav-brand .default-content-wrapper{
+  justify-content: flex-start;
+}
+
 header nav .nav-brand p {
   margin: 0;
 }
