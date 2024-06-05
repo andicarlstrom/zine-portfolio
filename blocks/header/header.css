@@ -18,7 +18,7 @@ nav[aria-expanded="true"] {
 }
 
 nav[aria-expanded="false"] {
-  background-color: transparent;
+  background-color: #fffcfb;
   border-bottom: none;
 }
 
@@ -182,8 +182,6 @@ header nav .nav-hamburger-icon::before,
 header nav .nav-hamburger-icon::after {
   content: '';
   position: absolute;
-
-  /* background: currentcolor; */
   background-color: #232323;
 }
 
