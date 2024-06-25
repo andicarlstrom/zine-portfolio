@@ -55,7 +55,7 @@ function decorateBreadcrumb() {
   const nav = document.querySelector('nav');
 
   const img = document.createElement('img');
-  img.src = `../../icons/${pageName}-title.svg`;
+  img.src = `../../icons/${pageName}-modtitle.svg`;
   img.className = 'section nav-breadcrumb';
 
   const navLinksDiv = nav.querySelector('.nav-links');
@@ -66,6 +66,7 @@ function setupLogoFirstLiHoverStyles() {
   const firstLi = document.querySelector('.nav-links ul li:first-child');
   const logo = document.querySelector('.nav-brand');
   const spans = logo.querySelectorAll('span');
+  console.log("spans:", spans)
 
   spans[1].style.display = 'none';
 

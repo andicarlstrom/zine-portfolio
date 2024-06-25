@@ -32,7 +32,8 @@ nav[aria-expanded="false"] {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  height: 12px;
+  /* height: 12px; */
+  width: 100px
 }
 
 .nav-links .default-content-wrapper {
