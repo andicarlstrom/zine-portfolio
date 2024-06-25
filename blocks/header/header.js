@@ -54,12 +54,12 @@ function decorateBreadcrumb() {
   const pageName = path.split('/')[1];
   const nav = document.querySelector('nav');
 
-  const breadcrumb = document.createElement('div');
-  breadcrumb.textContent = pageName;
-  breadcrumb.className = 'section nav-breadcrumb';
+  const img = document.createElement('img');
+  img.src = `../../icons/${pageName}-title.svg`;
+  img.className = 'section nav-breadcrumb';
 
   const navLinksDiv = nav.querySelector('.nav-links');
-  nav.insertBefore(breadcrumb, navLinksDiv);
+  nav.insertBefore(img, navLinksDiv);
 }
 
 function setupLogoFirstLiHoverStyles() {
