@@ -104,7 +104,11 @@ a {
   padding: 20px;
   text-decoration: none;
   color: #232323 !important;
-  text-transform: uppercase;
+  display: flex;
+}
+
+a span {
+  flex-grow: 1;
 }
 
 li:hover {
@@ -178,7 +182,7 @@ header nav .nav-hamburger-icon::before,
 header nav .nav-hamburger-icon::after {
   content: '';
   position: absolute;
-  background-color: #232323;
+  background-color: #F497CA;
 }
 
 header nav[aria-expanded="false"] .nav-hamburger-icon,
