@@ -1,6 +1,6 @@
 /* MOBILE */
 nav {
-  background-color: #F497CA;
+  background-color: #232323;
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -14,7 +14,8 @@ nav {
 }
 
 nav[aria-expanded="true"] {
-  background-color: #F497CA;
+  background-color: #232323;
+  /* border-bottom: 1px solid #F497CA; */
 }
 
 nav[aria-expanded="false"] {
@@ -89,18 +90,13 @@ nav[aria-expanded="false"] .nav-links .default-content-wrapper ul {
 }
 
 li {
-  background-color: #F497CA;
+  background-color: #232323;
   color: #232323;
   flex-grow: 1;
-  border-bottom: 4px solid #232323;
+  border-bottom: 1px solid #F497CA;
   display: flex;
   flex-flow: column;
   flex-direction: column-reverse;
-  font-family: Montserrat, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  font-weight: bold;
-  font-size: 28px;
 }
 
 a {
@@ -112,7 +108,7 @@ a {
 }
 
 li:hover {
-  background-color: #232323;
+  background-color: #F497CA;
 }
 
 li.hide-menu {
@@ -125,12 +121,12 @@ li:hover a {
   text-decoration: none;
 }
 
-li:last-child {
-  border-bottom: none;
+li:first-child {
+  border-top: 1px solid #F497CA;
 }
 
-li .icon {
-  display: none;
+li:last-child {
+  border-bottom: none;
 }
 
 /* Brand */
@@ -262,7 +258,7 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
   }
   
   li {
-    border-right: 4px solid #232323;
+    border-right: 1px solid #F497CA;
     border-bottom: none;
   }
 
@@ -272,8 +268,8 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
 
   li .icon {
     display: inline-block; /* This may be redundant with the global styles.css styles */
-    flex-grow: 1;
-    padding: 0 50px;
+    /* flex-grow: 1; */
+    /* padding: 0 50px; */
   }
 
   li .icon:hover {
