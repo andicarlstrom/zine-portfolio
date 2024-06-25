@@ -66,7 +66,6 @@ function setupLogoFirstLiHoverStyles() {
   const firstLi = document.querySelector('.nav-links ul li:first-child');
   const logo = document.querySelector('.nav-brand');
   const spans = logo.querySelectorAll('span');
-  console.log("spans:", spans)
 
   spans[1].style.display = 'none';
 
