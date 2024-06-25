@@ -55,7 +55,7 @@ function decorateBreadcrumb() {
   const nav = document.querySelector('nav');
 
   const img = document.createElement('img');
-  img.src = `../../icons/${pageName}-modtitle.svg`;
+  img.src = `../../icons/${pageName}-title.svg`;
   img.className = 'section nav-breadcrumb';
 
   const navLinksDiv = nav.querySelector('.nav-links');
