@@ -1,6 +1,6 @@
 /* MOBILE */
 nav {
-  background-color: #E01783;
+  background-color: #F497CA;
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -14,7 +14,7 @@ nav {
 }
 
 nav[aria-expanded="true"] {
-  background-color: #E01783;
+  background-color: #F497CA;
 }
 
 nav[aria-expanded="false"] {
@@ -89,7 +89,7 @@ nav[aria-expanded="false"] .nav-links .default-content-wrapper ul {
 }
 
 li {
-  background-color: #E01783;
+  background-color: #F497CA;
   color: #232323;
   flex-grow: 1;
   border-bottom: 4px solid #232323;
