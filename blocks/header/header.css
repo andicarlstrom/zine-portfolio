@@ -1,5 +1,5 @@
 /* MOBILE */
-nav {
+header nav {
   background-color: #232323;
   height: 60px;
   display: flex;
@@ -13,37 +13,36 @@ nav {
   padding: 0 20px;
 }
 
-nav[aria-expanded="true"] {
+header nav[aria-expanded="true"] {
   background-color: #232323;
 }
 
-nav[aria-expanded="false"] {
+header nav[aria-expanded="false"] {
   background-color: var(--background-color);
   border-bottom: none;
 }
 
-.nav-brand,
-.nav-breadcrumb,
-.nav-hamburger {
+header .nav-brand,
+header .nav-breadcrumb,
+header .nav-hamburger {
     z-index: 1;
 }
 
-.nav-breadcrumb {
+header .nav-breadcrumb {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  /* height: 12px; */
   width: 100px
 }
 
-.nav-links .default-content-wrapper {
+header .nav-links .default-content-wrapper {
   position: fixed;
   z-index: 0;
   inset: 0;
   top: 64px;
 }
 
-ul {
+header ul {
   display: flex;
   flex-flow: column;
   margin: 0;
@@ -54,23 +53,23 @@ ul {
 }
 
 /* Show the breadcrumb */
-nav[aria-expanded="false"] .nav-breadcrumb {
+header nav[aria-expanded="false"] .nav-breadcrumb {
   opacity: 1;
   transition-delay: 0.7s;
 }
 
 /* Hide the breadcrumb */
-nav[aria-expanded="true"] .nav-breadcrumb {
+header nav[aria-expanded="true"] .nav-breadcrumb {
   opacity: 0;
   transition: opacity 0.2s;
   transition-delay: 0.2s;
 }
 
-nav[aria-expanded="true"] .nav-links .default-content-wrapper ul {
+header nav[aria-expanded="true"] .nav-links .default-content-wrapper ul {
   animation: slide-down 0.5s backwards;
 }
 
-nav[aria-expanded="false"] .nav-links .default-content-wrapper ul {
+header nav[aria-expanded="false"] .nav-links .default-content-wrapper ul {
   animation: slide-up 0.5s forwards;
 }
 
@@ -84,7 +83,7 @@ nav[aria-expanded="false"] .nav-links .default-content-wrapper ul {
   to { transform: translateY(-100dvh); }
 }
 
-li {
+header li {
   background-color: #232323;
   color: #232323;
   flex-grow: 1;
@@ -94,7 +93,7 @@ li {
   flex-direction: column-reverse;
 }
 
-a {
+header a {
   cursor: default;
   padding: 20px;
   text-decoration: none;
@@ -102,39 +101,39 @@ a {
   display: flex;
 }
 
-a span {
+header a span {
   flex-grow: 1;
 }
 
-li:hover {
+header li:hover {
   background-color: #F497CA;
 }
 
-li.hide-menu {
+header li.hide-menu {
   /* dvh is device height and this needs to be applied because in mobile (IOS) there are navigation heights that are applied to the bottom and top of the viewport that  */
   transform: translateY(-100dvh);
 }
 
-li:hover a {
+header li:hover a {
   color: #fff !important;
   text-decoration: none;
 }
 
-li:first-child {
+header li:first-child {
   border-top: 1px solid #F497CA;
 }
 
-li:last-child {
+header li:last-child {
   border-bottom: none;
 }
 
 /* Brand */
-.nav-brand {
+header .nav-brand {
   grid-area: brand;
   flex-basis: 128px;
 }
 
-.nav-brand .default-content-wrapper{
+header .nav-brand .default-content-wrapper{
   justify-content: flex-start;
 }
 
@@ -219,57 +218,57 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
 
 /* DESKTOP */
 @media (width >= 900px) {
-  nav {
+  header nav {
     background-color: transparent;
     border: none;
   }
   
-  .nav-links .default-content-wrapper {
+  header .nav-links .default-content-wrapper {
     top: 0;
   }
 
-  nav[aria-expanded="true"] {
+  header nav[aria-expanded="true"] {
     background-color: transparent;
   }
 
-  ul {
+  header ul {
     flex-flow: row;
   }
 
-  nav[aria-expanded="true"] .nav-links .default-content-wrapper ul {
+  header nav[aria-expanded="true"] .nav-links .default-content-wrapper ul {
     animation: none;
   }
   
-  nav[aria-expanded="false"] .nav-links .default-content-wrapper ul {
+  header nav[aria-expanded="false"] .nav-links .default-content-wrapper ul {
     animation: none;
   }
 
-  nav[aria-expanded="true"] .nav-links .default-content-wrapper ul li.animate {
+  header nav[aria-expanded="true"] .nav-links .default-content-wrapper ul li.animate {
     animation: slide-down 0.5s backwards;
   }
   
-  nav[aria-expanded="false"] .nav-links .default-content-wrapper ul li.animate {
+  header nav[aria-expanded="false"] .nav-links .default-content-wrapper ul li.animate {
     animation: slide-up 0.5s forwards;
   }
   
-  li {
+  header li {
     border-right: 1px solid #F497CA;
     border-bottom: none;
   }
 
-  ul li:last-child {
+  header ul li:last-child {
     border-right: none;
   }
 
-  li .icon {
+  header li .icon {
     display: inline-block; /* This may be redundant with the global styles.css styles */
   }
 
-  li .icon:hover {
+  header li .icon:hover {
     animation: move-up-down 1.5s infinite;
   }
 
-  .nav-hamburger.hovered .nav-hamburger-icon::before,
+  header .nav-hamburger.hovered .nav-hamburger-icon::before,
   .nav-hamburger.hovered .nav-hamburger-icon::after {
     background-color: #fffcfb;
   }
