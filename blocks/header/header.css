@@ -264,11 +264,12 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
     border-right: none;
   }
 
-  header li .icon {
-    display: inline-block; /* This may be redundant with the global styles.css styles */
-  }
+  /* header li .icon {
+    display: inline-block;
+    height: 250px
+  } */
 
-  header li .icon:hover {
+  header li:hover .icon {
     animation: move-up-down 1.5s infinite;
   }
 
