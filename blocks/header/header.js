@@ -11,12 +11,33 @@ function applyAnimation(expanded, links) {
   });
 }
 
+function setLogoStyles (expanded) {
+  const logo = document.querySelector('.nav-brand');
+  const spans = logo.querySelectorAll('span');
+
+  if(expanded) {
+    spans[0].style.display = 'none';
+    spans[1].style.display = 'none';
+    spans[2].style.display = 'inline';
+  } else {
+    spans[0].style.display = 'inline';
+    spans[1].style.display = 'none';
+    spans[2].style.display = 'none';
+  }
+}
+
 function toggleMenu() {
   const nav = document.querySelector('nav');
   const links = document.querySelector('.nav-links .default-content-wrapper');
   const expanded = nav.getAttribute('aria-expanded') !== 'true';
   nav.setAttribute('aria-expanded', expanded);
   applyAnimation(expanded, links);
+
+  // Hate this, need to refactor.
+  const delay = expanded ? 250 : 900
+  setTimeout(() => {
+    setLogoStyles(expanded);
+  }, delay)
 }
 
 function setupLinks() {
@@ -67,15 +88,15 @@ function setupLogoFirstLiHoverStyles() {
   const logo = document.querySelector('.nav-brand');
   const spans = logo.querySelectorAll('span');
 
-  spans[1].style.display = 'none';
-
   firstLi.addEventListener('mouseover', () => {
     spans[0].style.display = 'none';
     spans[1].style.display = 'inline';
+    spans[2].style.display = 'none';
   });
   firstLi.addEventListener('mouseout', () => {
-    spans[0].style.display = 'inline';
+    spans[0].style.display = 'none';
     spans[1].style.display = 'none';
+    spans[2].style.display = 'inline';
   });
 }
 
@@ -145,7 +166,19 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
-  
+
+  // Set up logo default color
+  const logo = document.querySelector('.nav-brand');
+  const spans = logo.querySelectorAll('span');
+  if(window.location.pathname === '/') {
+    spans[0].style.display = 'none';
+    spans[1].style.display = 'none';
+    spans[2].style.display = 'inline';
+  } else {
+    spans[0].style.display = 'inline';
+    spans[1].style.display = 'none';
+    spans[2].style.display = 'none';
+  }
 
   // After nav has been added to the DOM, add breadcrumb
   decorateBreadcrumb();
