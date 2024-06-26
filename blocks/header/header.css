@@ -256,6 +256,10 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
     border-bottom: none;
   }
 
+  header li:first-child {
+    border-top: none;
+  }
+
   header ul li:last-child {
     border-right: none;
   }
