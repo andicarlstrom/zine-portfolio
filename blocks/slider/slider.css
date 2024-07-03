@@ -1,13 +1,21 @@
+/* MOBLIE */
 .slider ul {
-    display: flex;
-    width: 100%; /* Full width of the parent or container */
-    overflow-x: auto; /* Enables horizontal scrolling */
-    white-space: nowrap; /* Prevents wrapping of child elements */
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 .slider li {
-    display: inline-block; /* Make items inline to support nowrap */
-    width: 500px; /* Example width of items */
-    height: 600px; /* Example height of items */
-    /* margin-right: 10px; */
+    display: inline-block;
+}
+
+.slider li img {
+    max-height: 400px;
+}
+
+/* DESKTOP */
+@media (width >= 900px) {
+    .slider li img {
+        max-height: 850px; 
+    }
 }

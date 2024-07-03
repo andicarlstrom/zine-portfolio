@@ -264,11 +264,6 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
     border-right: none;
   }
 
-  /* header li .icon {
-    display: inline-block;
-    height: 250px
-  } */
-
   header li:hover .icon {
     animation: move-up-down 1.5s infinite;
   }

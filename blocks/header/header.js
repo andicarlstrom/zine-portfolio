@@ -194,4 +194,5 @@ export default async function decorate(block) {
 
   // Sets up logo color changes on hover of first nav item
   setupLogoFirstLiHoverStyles();
+
 }
