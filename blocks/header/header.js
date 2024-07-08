@@ -15,7 +15,7 @@ function setLogoStyles (expanded) {
   const logo = document.querySelector('.nav-brand');
   const spans = logo.querySelectorAll('span');
 
-  if(expanded) {
+  if (expanded) {
     spans[0].style.display = 'none';
     spans[1].style.display = 'none';
     spans[2].style.display = 'inline';
@@ -34,10 +34,10 @@ function toggleMenu() {
   applyAnimation(expanded, links);
 
   // Hate this, need to refactor.
-  const delay = expanded ? 250 : 900
+  const delay = expanded ? 250 : 900;
   setTimeout(() => {
     setLogoStyles(expanded);
-  }, delay)
+  }, delay);
 }
 
 function setupLinks() {
@@ -74,12 +74,12 @@ function getFormattedPageName(pn) {
   switch (pn) {
     case 'aboutme':
       return 'about me';
-    case 'mywork': 
+    case 'mywork':
       return 'my work';
-    case 'mystudio': 
-      return 'my studio'
+    case 'mystudio':
+      return 'my studio';
     default: 
-      return ''
+      return '';
   }
 }
 
@@ -87,7 +87,7 @@ function decorateBreadcrumb() {
   const path = window.location.pathname;
   const pathName = path.split('/')[1];
   const nav = document.querySelector('nav');
-  const pageName = getFormattedPageName(pathName)
+  const pageName = getFormattedPageName(pathName);
 
   const breadcrumb = document.createElement('div');
   breadcrumb.textContent = pageName;
