@@ -70,17 +70,31 @@ function setupLinks() {
   });
 }
 
+function getFormattedPageName(pn) {
+  switch (pn) {
+    case 'aboutme':
+      return 'about me';
+    case 'mywork': 
+      return 'my work';
+    case 'mystudio': 
+      return 'my studio'
+    default: 
+      return ''
+  }
+}
+
 function decorateBreadcrumb() {
   const path = window.location.pathname;
-  const pageName = path.split('/')[1];
+  const pathName = path.split('/')[1];
   const nav = document.querySelector('nav');
+  const pageName = getFormattedPageName(pathName)
 
-  const img = document.createElement('img');
-  img.src = `../../icons/${pageName}-title.svg`;
-  img.className = 'section nav-breadcrumb';
+  const breadcrumb = document.createElement('div');
+  breadcrumb.textContent = pageName;
+  breadcrumb.className = 'section nav-breadcrumb';
 
   const navLinksDiv = nav.querySelector('.nav-links');
-  nav.insertBefore(img, navLinksDiv);
+  nav.insertBefore(breadcrumb, navLinksDiv);
 }
 
 function setupLogoFirstLiHoverStyles() {
