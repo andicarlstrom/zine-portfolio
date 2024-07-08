@@ -11,7 +11,7 @@ function applyAnimation(expanded, links) {
   });
 }
 
-function setLogoStyles (expanded) {
+function setLogoStyles(expanded) {
   const logo = document.querySelector('.nav-brand');
   const spans = logo.querySelectorAll('span');
 
@@ -78,7 +78,7 @@ function getFormattedPageName(pn) {
       return 'my work';
     case 'mystudio':
       return 'my studio';
-    default: 
+    default:
       return '';
   }
 }
@@ -184,7 +184,7 @@ export default async function decorate(block) {
   // Set up logo default color
   const logo = document.querySelector('.nav-brand');
   const spans = logo.querySelectorAll('span');
-  if(window.location.pathname === '/') {
+  if (window.location.pathname === '/') {
     spans[0].style.display = 'none';
     spans[1].style.display = 'none';
     spans[2].style.display = 'inline';
@@ -208,5 +208,4 @@ export default async function decorate(block) {
 
   // Sets up logo color changes on hover of first nav item
   setupLogoFirstLiHoverStyles();
-
 }
