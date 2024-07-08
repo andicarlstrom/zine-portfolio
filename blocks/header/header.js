@@ -15,15 +15,9 @@ function setLogoStyles(expanded) {
   const logo = document.querySelector('.nav-brand');
   const spans = logo.querySelectorAll('span');
 
-  if (expanded) {
-    spans[0].style.display = 'none';
-    spans[1].style.display = 'none';
-    spans[2].style.display = 'inline';
-  } else {
-    spans[0].style.display = 'inline';
-    spans[1].style.display = 'none';
-    spans[2].style.display = 'none';
-  }
+  spans[0].style.display = expanded ? 'none' : 'inline';
+  spans[1].style.display = 'none';
+  spans[2].style.display = expanded ? 'inline' : 'none';
 }
 
 function toggleMenu() {
