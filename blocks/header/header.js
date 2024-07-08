@@ -26,7 +26,7 @@ function toggleMenu() {
   const links = document.querySelector('.nav-links .default-content-wrapper');
 
   const expanded = nav.getAttribute('aria-expanded') !== 'true';
-  
+
   nav.setAttribute('aria-expanded', expanded);
 
   applyAnimation(expanded, links);
