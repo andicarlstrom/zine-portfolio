@@ -30,7 +30,6 @@ header .nav-hamburger {
 
 header .nav-breadcrumb {
   position: fixed;
-  /* font-family: poppins, sans-serif; */
   font-size: 16px;
   left: 50%;
   transform: translateX(-50%);
