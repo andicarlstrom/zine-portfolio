@@ -22,15 +22,20 @@ function setLogoStyles(expanded) {
 
 function toggleMenu() {
   const nav = document.querySelector('nav');
+  const navLinkWrapper = document.querySelector('.nav-links');
   const links = document.querySelector('.nav-links .default-content-wrapper');
+
   const expanded = nav.getAttribute('aria-expanded') !== 'true';
+  
   nav.setAttribute('aria-expanded', expanded);
+
   applyAnimation(expanded, links);
 
-  // Hate this, need to refactor.
   const delay = expanded ? 250 : 900;
   setTimeout(() => {
     setLogoStyles(expanded);
+
+    navLinkWrapper.setAttribute('aria-expanded', expanded);
   }, delay);
 }
 
@@ -146,11 +151,12 @@ export default async function decorate(block) {
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta).pathname : '/nav';
   const fragment = await loadFragment(navPath);
+  const isRoot = window.location.pathname === '/' ? 'true' : 'false';
 
   // decorate nav DOM
   const nav = document.createElement('nav');
   nav.id = 'nav';
-  nav.ariaExpanded = window.location.pathname === '/' ? 'true' : 'false';
+  nav.ariaExpanded = isRoot;
 
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
@@ -187,6 +193,10 @@ export default async function decorate(block) {
     spans[1].style.display = 'none';
     spans[2].style.display = 'none';
   }
+
+  // Setting navLinks aria-expanded property
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.setAttribute('aria-expanded', isRoot);
 
   // After nav has been added to the DOM, add breadcrumb
   decorateBreadcrumb();

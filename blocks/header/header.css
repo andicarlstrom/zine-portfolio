@@ -33,7 +33,8 @@ header .nav-breadcrumb {
   font-size: 16px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px
+  width: 100px;
+  font-weight: 600;
 }
 
 header .nav-links .default-content-wrapper {
@@ -64,6 +65,14 @@ header nav[aria-expanded="true"] .nav-breadcrumb {
   opacity: 0;
   transition: opacity 0.2s;
   transition-delay: 0.2s;
+}
+
+header .nav-links[aria-expanded="true"] {
+  visibility: visible;
+}
+
+header .nav-links[aria-expanded="false"] {
+  visibility: hidden;
 }
 
 header nav[aria-expanded="true"] .nav-links .default-content-wrapper ul {
