@@ -3,10 +3,12 @@
     display: block;
     overflow-x: auto;
     white-space: nowrap;
+    padding: 0;
 }
 
 .slider li {
     display: inline-block;
+    padding-right: 20px;
 }
 
 .slider li img {
@@ -16,6 +18,6 @@
 /* DESKTOP */
 @media (width >= 900px) {
     .slider li img {
-        max-height: 850px; 
+        max-height: 800px; 
     }
 }
