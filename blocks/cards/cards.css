@@ -1,19 +1,37 @@
 .cards > ul {
   list-style: none;
-  margin: 0;
+  margin: 26px 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
-  grid-gap: 16px;
+  grid-gap: 20px;
 }
 
 .cards > ul > li {
-  border: 1px solid var(--dark-color);
   background-color: var(--background-color)
 }
 
 .cards .cards-card-body {
-  margin: 16px;
+  margin: 16px 8px 16px 8px;
+  display: flex;
+  flex-flow: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.cards .cards-card-body p {
+  margin: 0;
+  display: flex;
+}
+
+.cards .cards-card-body strong {
+  background-color: var(--primary-color);
+  padding: 2px 16px;
+  border-radius: 40px;
+  font-weight: 300;
+  font-size: small;
+  color: var(--background-color);
+  text-align: right;
 }
 
 .cards .cards-card-image {
@@ -28,4 +46,35 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  border-radius: 6px;
+
+  /* Make the image greyscale */
+  /* filter: grayscale(100%);  */
+
+  /* Smooth transition when hovering */
+  /* transition: filter 0.05s ease-in-out;  */
+}
+
+.cards > ul > li img:hover {
+  /* filter: grayscale(0%); */
+  border: 2px solid var(--primary-color); 
+}
+
+.cards .cards-card-body strong {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-weight: 400;
+  font-size: var(--body-font-size-xxs);
+  color: var(--primary-color);
+  text-align: right;
+  margin: 0 4px;
+}
+
+/* DESKTOP */
+@media (width >= 900px) {
+  .cards > ul {
+    grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+  }
 }
