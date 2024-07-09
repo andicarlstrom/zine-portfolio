@@ -1,0 +1,38 @@
+/* MOBILE */
+.bricks > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.bricks img {
+  width: 100%;
+}
+
+.bricks li {
+  list-style-type: none;
+}
+
+/* DESKTOP */
+@media (width >= 900px) {
+    .bricks > div {
+       display: flex;
+       flex-flow: row;
+       align-items: flex-start;
+    }
+
+    .bricks > div > div {
+        width: 50%;
+    }
+
+    [data-align="left"] {
+        text-align: left;
+    }
+    
+    [data-align="center"] {
+        text-align: center;
+    }
+    
+    [data-align="right"] {
+        text-align: right;
+    }
+}

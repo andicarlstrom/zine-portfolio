@@ -1,4 +1,8 @@
 /* MOBLIE */
+.slider {
+    margin-bottom: 100px;
+}
+
 .slider ul {
     display: block;
     overflow-x: auto;
@@ -12,12 +16,14 @@
 }
 
 .slider li img {
-    max-height: 400px;
+    max-height: 300px;
+    width: auto;
+    object-fit: cover;
 }
 
 /* DESKTOP */
 @media (width >= 900px) {
     .slider li img {
-        max-height: 800px; 
+        max-height: 600px;
     }
 }
