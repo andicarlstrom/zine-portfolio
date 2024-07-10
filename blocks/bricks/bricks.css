@@ -8,6 +8,10 @@
   width: 100%;
 }
 
+.bricks ul {
+  padding-inline-start: 0;
+}
+
 .bricks li {
   list-style-type: none;
 }
