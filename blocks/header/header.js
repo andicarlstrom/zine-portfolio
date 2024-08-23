@@ -126,7 +126,7 @@ function setNavArtHoverStyles() {
 
   // Add event listener to each list item
   navItems.forEach((item) => {
-    const spans = item.querySelectorAll('span');
+    const spans = item.querySelectorAll('.nav-links li a');
     // Hide second icon span. We only want one icon displaying at a time.
     spans[1].style.display = 'none';
 

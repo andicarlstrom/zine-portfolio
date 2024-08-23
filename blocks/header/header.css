@@ -1,11 +1,10 @@
 /* MOBILE */
 header nav {
-  background-color: #232323;
+  background-color: var(--background-color);
   height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 4px solid #232323;
   position: fixed;
   top: 0;
   left: 0;
@@ -14,7 +13,7 @@ header nav {
 }
 
 header nav[aria-expanded="true"] {
-  background-color: #232323;
+  background-color: var(--background-color);
 }
 
 header nav[aria-expanded="false"] {
@@ -37,13 +36,7 @@ header .nav-breadcrumb {
   font-weight: 600;
 }
 
-header .nav-links .default-content-wrapper {
-  position: fixed;
-  z-index: 1;
-  inset: 0;
-  top: 64px;
-}
-
+/* ANDI - This looks weird to me, should probably have .nav-links inbetween the header and ul. */
 header ul {
   display: flex;
   flex-flow: column;
@@ -67,12 +60,24 @@ header nav[aria-expanded="true"] .nav-breadcrumb {
   transition-delay: 0.2s;
 }
 
+header .nav-links .default-content-wrapper {
+  position: fixed;
+  z-index: 1;
+  inset: 0;
+  top: 64px;
+}
+
 header .nav-links[aria-expanded="true"] {
   visibility: visible;
 }
 
 header .nav-links[aria-expanded="false"] {
   visibility: hidden;
+}
+
+header .nav-links ul li img {
+  height: 400px;
+  width: 400px;
 }
 
 header nav[aria-expanded="true"] .nav-links .default-content-wrapper ul {
@@ -94,8 +99,8 @@ header nav[aria-expanded="false"] .nav-links .default-content-wrapper ul {
 }
 
 header li {
-  background-color: #232323;
-  color: #232323;
+  background-color: var(--background-color);
+  /* color: #232323; */
   flex-grow: 1;
   border-bottom: 1px solid #F497CA;
   display: flex;
@@ -115,19 +120,19 @@ header a span {
   flex-grow: 1;
 }
 
-header li:hover {
+/* header li:hover {
   background-color: #F497CA;
-}
+} */
 
 header li.hide-menu {
   /* dvh is device height and this needs to be applied because in mobile (IOS) there are navigation heights that are applied to the bottom and top of the viewport that  */
   transform: translateY(-100dvh);
 }
 
-header li:hover a {
+/* header li:hover a {
   color: #fff !important;
   text-decoration: none;
-}
+} */
 
 header li:first-child {
   border-top: 1px solid #F497CA;
