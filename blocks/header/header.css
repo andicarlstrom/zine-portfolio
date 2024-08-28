@@ -67,7 +67,7 @@ header .nav-breadcrumb {
   font-size: var(--body-font-size-xxs);
   display: flex;
   align-items: center;
-  padding-top: 2px;
+  /* padding-top: 2px; */
 }
 
 /* NAV-BREADCRUMB DESKTOP */
