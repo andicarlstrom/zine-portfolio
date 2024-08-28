@@ -2,7 +2,7 @@ import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 // // media query match that indicates mobile/tablet width
-// const isDesktop = window.matchMedia('(min-width: 900px)');
+const isDesktop = window.matchMedia('(min-width: 900px)');
 
 function applyAnimation(expanded, links) {
   links.querySelectorAll('li').forEach((link) => {
@@ -103,15 +103,17 @@ function setNavArtHoverStyles() {
 
     ahref[1].style.display = 'none';
 
-    item.addEventListener('mouseover', () => {
-      ahref[0].style.display = 'none';
-      ahref[1].style.display = 'inline';
-    });
-
-    item.addEventListener('mouseout', () => {
-      ahref[0].style.display = 'inline';
-      ahref[1].style.display = 'none';
-    });
+    if (isDesktop.matches === true) {
+      item.addEventListener('mouseover', () => {
+        ahref[0].style.display = 'none';
+        ahref[1].style.display = 'inline';
+      });
+  
+      item.addEventListener('mouseout', () => {
+        ahref[0].style.display = 'inline';
+        ahref[1].style.display = 'none';
+      });
+    }
   });
 }
 
