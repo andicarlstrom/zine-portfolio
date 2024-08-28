@@ -75,10 +75,11 @@ function decorateBreadcrumb() {
   const path = window.location.pathname;
   const pathName = path.split('/')[1];
   const nav = document.querySelector('nav');
+
   const pageName = getFormattedPageName(pathName);
 
   const breadcrumb = document.createElement('div');
-  breadcrumb.textContent = pageName;
+  breadcrumb.textContent = pageName && '/ ' + pageName;
   breadcrumb.className = 'section nav-breadcrumb';
 
   const navLinksDiv = nav.querySelector('.nav-links');
