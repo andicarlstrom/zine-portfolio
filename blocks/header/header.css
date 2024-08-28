@@ -1,14 +1,4 @@
 /* MOBILE */
-@keyframes slide-down {
-  from { transform: translateY(-100dvh); }
-  to { transform: translateY(0); }
-}
-
-@keyframes slide-up {
-  from { transform: translateY(0); }
-  to { transform: translateY(-100dvh); }
-}
-
 header nav {
   background-color: var(--background-color);
   height: 60px;
@@ -92,6 +82,16 @@ header nav[aria-expanded="true"] .nav-links .default-content-wrapper ul {
 
 header nav[aria-expanded="false"] .nav-links .default-content-wrapper ul {
   animation: slide-up 0.5s forwards;
+}
+
+@keyframes slide-down {
+  from { transform: translateY(-100dvh); }
+  to { transform: translateY(0); }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100dvh); }
 }
 
 header .nav-links li {

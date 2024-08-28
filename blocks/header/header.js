@@ -11,15 +11,6 @@ function applyAnimation(expanded, links) {
   });
 }
 
-function setLogoStyles(expanded) {
-  const logo = document.querySelector('.nav-brand');
-  const spans = logo.querySelectorAll('span');
-
-  spans[0].style.display = expanded ? 'none' : 'inline';
-  spans[1].style.display = 'none';
-  spans[2].style.display = expanded ? 'inline' : 'none';
-}
-
 function toggleMenu() {
   const nav = document.querySelector('nav');
   const navLinkWrapper = document.querySelector('.nav-links');
@@ -33,8 +24,6 @@ function toggleMenu() {
 
   const delay = expanded ? 250 : 900;
   setTimeout(() => {
-    setLogoStyles(expanded);
-
     navLinkWrapper.setAttribute('aria-expanded', expanded);
   }, delay);
 }
@@ -96,23 +85,6 @@ function decorateBreadcrumb() {
   nav.insertBefore(breadcrumb, navLinksDiv);
 }
 
-function setupLogoFirstLiHoverStyles() {
-  const firstLi = document.querySelector('.nav-links ul li:first-child');
-  const logo = document.querySelector('.nav-brand');
-  const spans = logo.querySelectorAll('span');
-
-  firstLi.addEventListener('mouseover', () => {
-    spans[0].style.display = 'none';
-    spans[1].style.display = 'inline';
-    spans[2].style.display = 'none';
-  });
-  firstLi.addEventListener('mouseout', () => {
-    spans[0].style.display = 'none';
-    spans[1].style.display = 'none';
-    spans[2].style.display = 'inline';
-  });
-}
-
 function handleLastListItemHamburgerHover() {
   const lastLi = document.querySelector('.nav-links ul li:last-child');
   const hamburger = document.querySelector('.nav-hamburger');
@@ -126,7 +98,7 @@ function setNavArtHoverStyles() {
 
   // Add event listener to each list item
   navItems.forEach((item) => {
-    const spans = item.querySelectorAll('.nav-links li a');
+    const spans = item.querySelectorAll('span');
     // Hide second icon span. We only want one icon displaying at a time.
     spans[1].style.display = 'none';
 
@@ -181,19 +153,6 @@ export default async function decorate(block) {
   navWrapper.append(nav);
   block.append(navWrapper);
 
-  // Set up logo default color
-  const logo = document.querySelector('.nav-brand');
-  const spans = logo.querySelectorAll('span');
-  if (window.location.pathname === '/') {
-    spans[0].style.display = 'none';
-    spans[1].style.display = 'none';
-    spans[2].style.display = 'inline';
-  } else {
-    spans[0].style.display = 'inline';
-    spans[1].style.display = 'none';
-    spans[2].style.display = 'none';
-  }
-
   // Setting navLinks aria-expanded property
   const navLinks = document.querySelector('.nav-links');
   navLinks.setAttribute('aria-expanded', isRoot);
@@ -209,7 +168,4 @@ export default async function decorate(block) {
 
   // Sets up nav art hover styles
   setNavArtHoverStyles();
-
-  // Sets up logo color changes on hover of first nav item
-  setupLogoFirstLiHoverStyles();
 }
