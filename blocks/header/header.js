@@ -95,22 +95,23 @@ function handleLastListItemHamburgerHover() {
 }
 
 function setNavArtHoverStyles() {
+  console.log('hitting')
   const navItems = document.querySelectorAll('.nav-links ul li');
 
   // Add event listener to each list item
   navItems.forEach((item) => {
-    const spans = item.querySelectorAll('span');
-    // Hide second icon span. We only want one icon displaying at a time.
-    spans[1].style.display = 'none';
+    const ahref = item.querySelectorAll('a');
+
+    ahref[1].style.display = 'none';
 
     item.addEventListener('mouseover', () => {
-      spans[0].style.display = 'none';
-      spans[1].style.display = 'inline';
+      ahref[0].style.display = 'none';
+      ahref[1].style.display = 'inline';
     });
 
     item.addEventListener('mouseout', () => {
-      spans[0].style.display = 'inline';
-      spans[1].style.display = 'none';
+      ahref[0].style.display = 'inline';
+      ahref[1].style.display = 'none';
     });
   });
 }
