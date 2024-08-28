@@ -79,7 +79,7 @@ function decorateBreadcrumb() {
   const pageName = getFormattedPageName(pathName);
 
   const breadcrumb = document.createElement('div');
-  breadcrumb.textContent = pageName && '/ ' + pageName;
+  breadcrumb.textContent = pageName ? `/ ${pageName}` : '';
   breadcrumb.className = 'section nav-breadcrumb';
 
   const navLinksDiv = nav.querySelector('.nav-links');
@@ -95,7 +95,6 @@ function handleLastListItemHamburgerHover() {
 }
 
 function setNavArtHoverStyles() {
-  console.log('hitting')
   const navItems = document.querySelectorAll('.nav-links ul li');
 
   // Add event listener to each list item
