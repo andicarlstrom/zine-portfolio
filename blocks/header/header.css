@@ -1,7 +1,7 @@
 /* MOBILE */
 header nav {
   background-color: var(--background-color);
-  height: 60px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -67,7 +67,6 @@ header .nav-breadcrumb {
   font-size: var(--body-font-size-xxs);
   display: flex;
   align-items: center;
-  /* padding-top: 2px; */
 }
 
 /* NAV-BREADCRUMB DESKTOP */
