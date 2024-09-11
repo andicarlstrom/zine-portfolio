@@ -108,7 +108,7 @@ function setNavArtHoverStyles() {
         ahref[0].style.display = 'none';
         ahref[1].style.display = 'inline';
       });
-  
+
       item.addEventListener('mouseout', () => {
         ahref[0].style.display = 'inline';
         ahref[1].style.display = 'none';
