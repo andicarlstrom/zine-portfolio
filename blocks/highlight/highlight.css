@@ -1,0 +1,73 @@
+/* stylelint-disable no-descending-specificity */
+.highlight {
+    white-space: none;
+    overflow: hidden;
+    margin-left: calc(-50vw + 50%);
+    margin-top: 30px;
+}
+
+.highlight > div > div:nth-child(1) {
+    height: 350px;
+    object-fit: contain;
+    overflow: hidden;
+    position: relative;
+    border-top: 4px solid var(--primary-dark);
+    border-right: 4px solid var(--primary-dark);
+    border-bottom: 4px solid var(--primary-dark);
+    margin-right: 20px;
+    background-color: #BAC1A1;
+    display: flex;
+    justify-content: center;
+}
+
+.highlight > div > div:last-child {
+    margin: 16px;
+}
+
+/* TABLET */
+@media (width >= 600px) {
+    .highlight > div > div:nth-child(1) img {
+        height: 500px;
+        width: auto;
+    }
+}
+
+/* DESKTOP */
+@media (width >= 1025px) {
+    .highlight {
+        margin: 0;
+    }
+    
+    .highlight > div {
+        display: flex;
+        height: 100%;
+    }
+    
+    .highlight > div > div {
+        height: 100%;
+        width: 50%;
+    }
+    
+    /* Left div - Image */
+    .highlight > div > div:nth-child(1) {
+        background-color: transparent;
+        border: none;
+        margin: 0;
+        position: inherit;
+    }
+    
+    .highlight > div > div:nth-child(1) img {
+        position: absolute;
+        top: 0;
+        bottom: 0; 
+        left: 5%;
+        height: 95%;
+        object-fit: cover;
+        margin-top: 65px;
+    }
+
+    .highlight > div > div:last-child {
+        margin: 0 32px;
+    }
+}
+
