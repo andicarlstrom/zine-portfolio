@@ -40,11 +40,17 @@
 .cards .cards-card-body {
   margin-top: 10px;
   text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 /* DESKTOP */
 @media (width >= 900px) {
   .cards ul {
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  }
+
+  .cards .cards-card-body {
+    font-size: 20px;
+    font-weight: 600;
   }
 }
