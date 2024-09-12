@@ -15,15 +15,15 @@ function toggleMenu() {
   const nav = document.querySelector('nav');
   const navLinkWrapper = document.querySelector('.nav-links');
   const links = document.querySelector('.nav-links .default-content-wrapper');
-
   const expanded = nav.getAttribute('aria-expanded') !== 'true';
 
   nav.setAttribute('aria-expanded', expanded);
-
+  
   applyAnimation(expanded, links);
-
+  
   const delay = expanded ? 250 : 900;
   setTimeout(() => {
+    decorateBreadcrumb(expanded);
     navLinkWrapper.setAttribute('aria-expanded', expanded);
   }, delay);
 }
@@ -71,19 +71,28 @@ function getFormattedPageName(pn) {
   }
 }
 
-function decorateBreadcrumb() {
+function decorateBreadcrumb(isExpanded) {
   const path = window.location.pathname;
   const pathName = path.split('/')[1];
   const nav = document.querySelector('nav');
 
   const pageName = getFormattedPageName(pathName);
+  const shouldDisplayBreadcrumb = !isExpanded && pageName.length > 0
 
-  const breadcrumb = document.createElement('div');
-  breadcrumb.textContent = pageName ? `/ ${pageName}` : '';
-  breadcrumb.className = 'section nav-breadcrumb';
+  let breadcrumb = document.querySelector('.nav-breadcrumb');
+  if (!breadcrumb) {
+    breadcrumb = document.createElement('div');
+    breadcrumb.className = 'section nav-breadcrumb';
 
-  const navLinksDiv = nav.querySelector('.nav-links');
-  nav.insertBefore(breadcrumb, navLinksDiv);
+    const navLinksDiv = nav.querySelector('.nav-links');
+    nav.insertBefore(breadcrumb, navLinksDiv);
+  }
+
+  if (shouldDisplayBreadcrumb) {
+    breadcrumb.textContent = `/ ${pageName}`;
+  } else {
+    breadcrumb.textContent = '';
+  }
 }
 
 function handleLastListItemHamburgerHover() {

@@ -127,7 +127,7 @@ header nav[aria-expanded="false"] .nav-links .default-content-wrapper ul {
 
 @keyframes slide-up {
   from { transform: translateY(0); }
-  to { transform: translateY(-100dvh); }
+  to { transform: translateY(-110dvh); }
 }
 
 header .nav-links li {
@@ -148,10 +148,9 @@ header .nav-links li img {
   position: absolute;
   bottom: 0; 
   top: 5%;
-  right: 50px;
   left: 50px;
   object-fit: cover;
-  width: 100%;
+  width: 90%;
   height: 100%;
   border: 4px solid var(--primary-dark);
 }
@@ -179,6 +178,10 @@ header .nav-links li:last-child {
 
 /* NAV-LINKS DESKTOP */
 @media (width >= 900px) {
+  header .nav-links li {
+    border-bottom: none;
+  }
+
   header .nav-links li strong {
     left: 2%;
   }
@@ -291,16 +294,17 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
   }
   
   header li {
-    border-bottom: none;
+    /* border-bottom: none; */
+    border: none;
   }
 
-  header li:first-child {
+  /* header li:first-child {
     border-top: none;
   }
 
   header ul li:last-child {
     border-right: none;
-  }
+  } */
 
   header li:hover .icon {
     animation: move-up-down 1.5s infinite;
