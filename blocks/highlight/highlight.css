@@ -15,7 +15,7 @@
     border-right: 4px solid var(--primary-dark);
     border-bottom: 4px solid var(--primary-dark);
     margin-right: 20px;
-    background-color: #BAC1A1;
+    background-color: var(--primary-light);
     display: flex;
     justify-content: center;
 }

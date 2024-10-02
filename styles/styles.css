@@ -12,18 +12,20 @@
 
 :root {
   /* colors */
-  --link-color: #F497CA;
-  --link-hover-color: #F497CA;
-  --primary-color: #F497CA;
+  --link-color: #ff7f6b;
+  --link-hover-color: #ff7f6b;
+  --primary-color: #ff7f6b;
   --background-color: #f7f7f9;
   --normal-color: #0B21E3;
   --ls-color: #D1134A;
   --fable-color: #FBC13F;
   --cofi-color: #5F25E9;
-  --primary-dark: #232323;
+  --primary-dark: #255E4D;
+  --primary-medium: #84a49b;
+  --primary-light: #e6fff8;
   --light-color: #eee;
   --dark-color: #ccc;
-  --text-color: #232323;
+  --text-color: #255E4D;
 
   /* fonts */
   --body-font-family: poppins, sans-serif;

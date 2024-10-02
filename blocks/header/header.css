@@ -144,7 +144,7 @@ header .nav-links li {
 header .nav-links li a {
   cursor: default;
   text-decoration: none;
-  color: #232323 !important;
+  color: var(--primary-dark) !important;
   display: flex;
 }
 
@@ -234,7 +234,7 @@ header nav[aria-expanded="false"] .nav-hamburger-icon::before,
 header nav[aria-expanded="false"] .nav-hamburger-icon::after {
   height: 2px;
   border-radius: 2px;
-  background-color: #232323;
+  background-color: var(--primary-dark);
 }
 
 header nav[aria-expanded="false"] .nav-hamburger-icon::before {
