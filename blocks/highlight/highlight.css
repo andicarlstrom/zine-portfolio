@@ -36,24 +36,26 @@
 @media (width >= 1025px) {
     .highlight {
         margin: 0;
+        /* height: 100%; */
+        height: calc(100vh - 70px);
     }
     
     .highlight > div {
-        display: flex;
         height: 100%;
+        display: flex;
     }
     
     .highlight > div > div {
-        height: 100%;
         width: 50%;
     }
     
-    /* Left div - Image */
+    /* Image */
     .highlight > div > div:nth-child(1) {
         background-color: transparent;
         border: none;
         margin: 0;
         position: inherit;
+        height: 100%;
     }
     
     .highlight > div > div:nth-child(1) img {
@@ -66,8 +68,11 @@
         margin-top: 65px;
     }
 
-    .highlight > div > div:last-child {
+    .highlight > div > div:nth-child(2) {
         margin: 0 32px;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
     }
 }
 
