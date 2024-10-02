@@ -16,19 +16,27 @@ function toggleMenu() {
   const navLinkWrapper = document.querySelector('.nav-links');
   const links = document.querySelector('.nav-links .default-content-wrapper');
   const expanded = nav.getAttribute('aria-expanded') !== 'true';
-
   nav.setAttribute('aria-expanded', expanded);
   
   applyAnimation(expanded, links);
   
   const delay = expanded ? 250 : 900;
   setTimeout(() => {
+    if (window.location.pathname === '/') {
+      window.location.href = '/aboutme';
+    }
+
     decorateBreadcrumb(expanded);
     navLinkWrapper.setAttribute('aria-expanded', expanded);
   }, delay);
 }
 
 function setupLinks() {
+  const navBrand = document.querySelector('.nav-brand');
+  navBrand.onclick = () => {
+    window.location.href = '/aboutme';
+  }
+
   // Get all list items in the navigation menu
   const navItems = document.querySelectorAll('.nav-links ul li');
 

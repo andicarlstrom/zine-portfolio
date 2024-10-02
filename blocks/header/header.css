@@ -23,6 +23,10 @@ header nav[aria-expanded="false"] {
 }
 
 /* NAV-BRAND */
+header .nav-brand{
+  cursor: pointer;
+}
+
 header .nav-brand p span {
   display: flex;
 }
@@ -181,9 +185,14 @@ header .nav-links li:last-child {
   header .nav-links li {
     border-bottom: none;
   }
-
+  
   header .nav-links li strong {
     left: 2%;
+    top: 7%
+  }
+
+  header .nav-links li img {
+    top: 7%
   }
 }
 
