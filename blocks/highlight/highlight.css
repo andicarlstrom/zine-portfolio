@@ -15,7 +15,7 @@
     border-right: 4px solid var(--primary-dark);
     border-bottom: 4px solid var(--primary-dark);
     margin-right: 20px;
-    background-color: var(--primary-light);
+    background-color: var(--primary-medium);
     display: flex;
     justify-content: center;
 }
@@ -36,7 +36,6 @@
 @media (width >= 1025px) {
     .highlight {
         margin: 0;
-        /* height: 100%; */
         height: calc(100vh - 70px);
     }
     

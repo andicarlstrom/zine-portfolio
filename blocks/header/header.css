@@ -65,22 +65,22 @@ header .nav-brand h4 {
 /* NAV-BREADCRUMB */
 header .nav-breadcrumb {
   position: fixed;
-  left: 196px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: var(--body-font-size-xxs);
   display: flex;
   align-items: center;
+  margin-left: 200px;
 }
 
 /* NAV-BREADCRUMB DESKTOP */
 @media (width >= 900px) {
   header .nav-breadcrumb {
     position: fixed;
-    left: 266px;
     font-size: var(--body-font-size-s);
     padding-top: 0;
+    margin-left: 270px;
   }
 }
 
