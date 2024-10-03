@@ -75,3 +75,10 @@
     }
 }
 
+/* XL DESKTOP */
+@media (width >= 1824px) {
+    .highlight > div > div:last-child {
+        padding: 0 200px;
+    }
+}
+
