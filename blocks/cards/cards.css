@@ -25,6 +25,23 @@
   border: 4px solid var(--primary-dark);
 }
 
+/* TODO - Hate this logic, it's all hard coded, need to fix */
+.cards ul li:nth-child(1) .cards-card-image a img:hover {
+  border: 4px solid var(--normal-color);
+}
+
+.cards ul li:nth-child(2) .cards-card-image a img:hover {
+  border: 4px solid var(--ls-color);
+}
+
+.cards ul li:nth-child(3) .cards-card-image a img:hover {
+  border: 4px solid var(--fable-color);
+}
+
+.cards ul li:nth-child(4) .cards-card-image a img:hover {
+  border: 4px solid var(--cofi-color);
+}
+
 .cards .cards-card-image a:last-child {
   display: none;
 }
@@ -56,23 +73,6 @@
     grid-template-columns: repeat(auto-fill, minmax(475px, 1fr));
   }
 
-  /* TODO - Hate this logic, it's all hard coded, need to fix */
-  .cards ul li:nth-child(1) .cards-card-image a img:hover {
-    border: 4px solid var(--normal-color);
-  }
-
-  .cards ul li:nth-child(2) .cards-card-image a img:hover {
-    border: 4px solid var(--ls-color);
-  }
-
-  .cards ul li:nth-child(3) .cards-card-image a img:hover {
-    border: 4px solid var(--fable-color);
-  }
-
-  .cards ul li:nth-child(4) .cards-card-image a img:hover {
-    border: 4px solid var(--cofi-color);
-  }
-
   .cards .cards-card-image a img {
     height: calc(100vh - 150px);
     width: 100%;
@@ -81,5 +81,4 @@
   .cards .cards-card-body {
     top: 8px;
   }
-  
 }
