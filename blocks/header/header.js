@@ -111,11 +111,30 @@ function handleLastListItemHamburgerHover() {
   lastLi.addEventListener('mouseout', () => hamburger.classList.remove('hovered'));
 }
 
-function setNavArtHoverStyles() {
+function setMobileHoverStyles() {
   const navItems = document.querySelectorAll('.nav-links ul li');
-
   // Add event listener to each list item
   navItems.forEach((item) => {
+    const ahref = item.querySelectorAll('a');
+
+    ahref[1].style.display = 'none';
+
+    if (isDesktop.matches === true) {
+      item.addEventListener('mouseover', () => {
+        ahref[0].style.display = 'none';
+        ahref[1].style.display = 'inline';
+      });
+
+      item.addEventListener('mouseout', () => {
+        ahref[0].style.display = 'inline';
+        ahref[1].style.display = 'none';
+      });
+    }
+  });
+
+  const cards = document.querySelectorAll('.cards ul li');
+  // Add event listener to each list item
+  cards.forEach((item) => {
     const ahref = item.querySelectorAll('a');
 
     ahref[1].style.display = 'none';
@@ -187,5 +206,5 @@ export default async function decorate(block) {
   handleLastListItemHamburgerHover();
 
   // Sets up nav art hover styles
-  setNavArtHoverStyles();
+  setMobileHoverStyles();
 }

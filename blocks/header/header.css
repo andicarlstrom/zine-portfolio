@@ -303,17 +303,8 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
   }
   
   header li {
-    /* border-bottom: none; */
     border: none;
   }
-
-  /* header li:first-child {
-    border-top: none;
-  }
-
-  header ul li:last-child {
-    border-right: none;
-  } */
 
   header li:hover .icon {
     animation: move-up-down 1.5s infinite;
