@@ -111,10 +111,11 @@ function handleLastListItemHamburgerHover() {
   lastLi.addEventListener('mouseout', () => hamburger.classList.remove('hovered'));
 }
 
-function setMobileHoverStyles(element) {
-  const elements = document.querySelectorAll(element);
+function setNavArtHoverStyles() {
+  const navItems = document.querySelectorAll('.nav-links ul li');
+
   // Add event listener to each list item
-  elements.forEach((item) => {
+  navItems.forEach((item) => {
     const ahref = item.querySelectorAll('a');
 
     ahref[1].style.display = 'none';
@@ -186,6 +187,5 @@ export default async function decorate(block) {
   handleLastListItemHamburgerHover();
 
   // Sets up nav art hover styles
-  setMobileHoverStyles('.nav-links ul li');
-  setMobileHoverStyles('.cards ul li');
+  setNavArtHoverStyles();
 }
