@@ -1,7 +1,7 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
-// // media query match that indicates mobile/tablet width
+// media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
 
 function applyAnimation(expanded, links) {
@@ -11,15 +11,39 @@ function applyAnimation(expanded, links) {
   });
 }
 
+function decorateBreadcrumb(isExpanded) {
+  const path = window.location.pathname;
+  const pathName = path.split('/')[1];
+  const nav = document.querySelector('nav');
+
+  const pageName = getFormattedPageName(pathName);
+  const shouldDisplayBreadcrumb = !isExpanded && pageName.length > 0
+
+  let breadcrumb = document.querySelector('.nav-breadcrumb');
+  if (!breadcrumb) {
+    breadcrumb = document.createElement('div');
+    breadcrumb.className = 'section nav-breadcrumb';
+
+    const navLinksDiv = nav.querySelector('.nav-links');
+    nav.insertBefore(breadcrumb, navLinksDiv);
+  }
+
+  if (shouldDisplayBreadcrumb) {
+    breadcrumb.textContent = `/ ${pageName}`;
+  } else {
+    breadcrumb.textContent = '';
+  }
+}
+
 function toggleMenu() {
   const nav = document.querySelector('nav');
   const navLinkWrapper = document.querySelector('.nav-links');
   const links = document.querySelector('.nav-links .default-content-wrapper');
   const expanded = nav.getAttribute('aria-expanded') !== 'true';
   nav.setAttribute('aria-expanded', expanded);
-  
+
   applyAnimation(expanded, links);
-  
+
   const delay = expanded ? 250 : 900;
   setTimeout(() => {
     if (window.location.pathname === '/') {
@@ -77,30 +101,6 @@ function getFormattedPageName(pn) {
       return 'my studio';
     default:
       return '';
-  }
-}
-
-function decorateBreadcrumb(isExpanded) {
-  const path = window.location.pathname;
-  const pathName = path.split('/')[1];
-  const nav = document.querySelector('nav');
-
-  const pageName = getFormattedPageName(pathName);
-  const shouldDisplayBreadcrumb = !isExpanded && pageName.length > 0
-
-  let breadcrumb = document.querySelector('.nav-breadcrumb');
-  if (!breadcrumb) {
-    breadcrumb = document.createElement('div');
-    breadcrumb.className = 'section nav-breadcrumb';
-
-    const navLinksDiv = nav.querySelector('.nav-links');
-    nav.insertBefore(breadcrumb, navLinksDiv);
-  }
-
-  if (shouldDisplayBreadcrumb) {
-    breadcrumb.textContent = `/ ${pageName}`;
-  } else {
-    breadcrumb.textContent = '';
   }
 }
 
