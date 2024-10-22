@@ -11,13 +11,26 @@ function applyAnimation(expanded, links) {
   });
 }
 
+function getFormattedPageName(pn) {
+  switch (pn) {
+    case 'aboutme':
+      return 'about me';
+    case 'mywork':
+      return 'my work';
+    case 'mystudio':
+      return 'my studio';
+    default:
+      return '';
+  }
+}
+
 function decorateBreadcrumb(isExpanded) {
   const path = window.location.pathname;
   const pathName = path.split('/')[1];
   const nav = document.querySelector('nav');
 
   const pageName = getFormattedPageName(pathName);
-  const shouldDisplayBreadcrumb = !isExpanded && pageName.length > 0
+  const shouldDisplayBreadcrumb = !isExpanded && pageName.length > 0;
 
   let breadcrumb = document.querySelector('.nav-breadcrumb');
   if (!breadcrumb) {
@@ -59,7 +72,7 @@ function setupLinks() {
   const navBrand = document.querySelector('.nav-brand');
   navBrand.onclick = () => {
     window.location.href = '/aboutme';
-  }
+  };
 
   // Get all list items in the navigation menu
   const navItems = document.querySelectorAll('.nav-links ul li');
@@ -77,7 +90,7 @@ function setupLinks() {
     }
 
     item.addEventListener('click', (event) => {
-      event.preventDefault()
+      event.preventDefault();
       const link = item.querySelector('a');
       const url = link.getAttribute('href');
 
@@ -89,19 +102,6 @@ function setupLinks() {
       }, ((duration + 0.2) + step) * 1000);
     });
   });
-}
-
-function getFormattedPageName(pn) {
-  switch (pn) {
-    case 'aboutme':
-      return 'about me';
-    case 'mywork':
-      return 'my work';
-    case 'mystudio':
-      return 'my studio';
-    default:
-      return '';
-  }
 }
 
 function handleLastListItemHamburgerHover() {
