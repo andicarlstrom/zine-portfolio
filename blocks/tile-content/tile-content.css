@@ -1,0 +1,17 @@
+.tile-content {
+    margin-bottom: 60px;
+}
+
+/* DESKTOP */
+@media (width >= 900px) {
+    .tile-content > div > div {
+        width: 75%;
+    }
+}
+
+/* XL DESKTOP */
+@media (width >= 1824px) {
+    .tile-content > div > div {
+        width: 50%;
+    }
+}

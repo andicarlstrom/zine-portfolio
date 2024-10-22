@@ -4,6 +4,7 @@
     overflow: hidden;
     margin-left: calc(-50vw + 50%);
     margin-top: 30px;
+    margin-bottom: 60px;
 }
 
 .highlight > div > div:nth-child(1) {
@@ -23,6 +24,11 @@
 .highlight > div > div:last-child {
     margin: 16px;
 }
+
+.highlight .button-container {
+    margin: 0;
+}
+
 
 /* TABLET */
 @media (width >= 600px) {

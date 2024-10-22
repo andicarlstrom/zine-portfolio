@@ -1,0 +1,24 @@
+.tile > div {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.tile > div > div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+}
+
+.tile > div > div:nth-child(1) picture img {
+    height: 200px;
+}
+
+@media (width >= 900px) {
+    .tile > div {
+        display: flex; 
+        margin-bottom: 20px;
+    }
+
+    .tile > div > div:nth-child(1) picture img {
+        padding-right: 30px;
+    }
+}

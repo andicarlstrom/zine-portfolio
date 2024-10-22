@@ -52,7 +52,8 @@ function setupLinks() {
       item.className = 'hide-menu';
     }
 
-    item.addEventListener('click', () => {
+    item.addEventListener('click', (event) => {
+      event.preventDefault()
       const link = item.querySelector('a');
       const url = link.getAttribute('href');
 
@@ -130,6 +131,8 @@ function setNavArtHoverStyles() {
         ahref[0].style.display = 'inline';
         ahref[1].style.display = 'none';
       });
+    } else {
+      ahref[1].style.display = 'inline';
     }
   });
 }

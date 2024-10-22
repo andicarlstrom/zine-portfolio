@@ -1,3 +1,7 @@
+.cards {
+  margin-top: 20px;
+}
+
 .cards ul {
   list-style: none;
   display: grid;
@@ -8,12 +12,11 @@
 }
 
 .cards ul li {
-  position: relative;
+  display: flex;
 }
 
 .cards .cards-card-image {
   display: flex;
-  padding-left: 50px;
 }
 
 .cards .cards-card-image a img {
@@ -22,59 +25,23 @@
   object-fit: cover;
   width: 95%;
   height: 100%;
-  border: 4px solid var(--primary-dark);
-}
-
-/* .cards ul li .cards-card-image a img:hover {
-  background-color: aliceblue;
-} */
-
-/* TODO - Hate this logic, it's all hard coded, need to fix */
-/* .cards ul li:nth-child(1) .cards-card-image a img:hover {
-  border: 4px solid var(--normal-color);
-}
-
-.cards ul li:nth-child(2) .cards-card-image a img:hover {
-  border: 4px solid var(--ls-color);
-}
-
-.cards ul li:nth-child(3) .cards-card-image a img:hover {
-  border: 4px solid var(--fable-color);
-}
-
-.cards ul li:nth-child(4) .cards-card-image a img:hover {
-  border: 4px solid var(--cofi-color);
-} */
-
-.cards .cards-card-image a:last-child {
-  display: none;
-}
-
-.cards .cards-card-image:hover a:first-child {
-  display: none;
-}
-
-.cards .cards-card-image:hover a:last-child {
-  display: block;
-}
+} 
 
 .cards .cards-card-body {
-  margin-top: 10px;
-  position: absolute;
-  top: 2%;
-  left: 3%;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 6px;
-  font-size: var(--body-font-size-s);
+  writing-mode: vertical-rl;
+  transform: rotate(360deg);
+  font-size: var(--heading-font-size-s);
 }
 
 /* DESKTOP */
 @media (width >= 900px) {
   .cards ul {
     grid-template-columns: repeat(auto-fill, minmax(475px, 1fr));
+  }
+
+  .cards ul li {
+    padding-right: 20px;
   }
 
   .cards .cards-card-image a img {
