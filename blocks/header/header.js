@@ -59,9 +59,9 @@ function toggleMenu() {
 
   const delay = expanded ? 250 : 900;
   setTimeout(() => {
-    if (window.location.pathname === '/') {
-      window.location.href = '/aboutme';
-    }
+    // if (window.location.pathname === '/') {
+    //   window.location.href = '/aboutme';
+    // }
 
     decorateBreadcrumb(expanded);
     navLinkWrapper.setAttribute('aria-expanded', expanded);
