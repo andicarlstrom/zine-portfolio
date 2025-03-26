@@ -1,22 +1,36 @@
 .columns > div {
   display: flex;
   flex-direction: column;
-}
-
-.columns img {
-  width: 100%;
+  margin: 0 !important;
 }
 
 .columns > div > div {
   order: 1;
+  margin-bottom: 24px;
 }
 
-.columns > div > .columns-img-col {
-  order: 0;
+.columns > div > div > p {
+  padding: 0;
+  margin: 0;
 }
 
-.columns > div > .columns-img-col img {
-  display: block;
+.columns > div > div > h4 {
+  padding: 0;
+  margin: 0;
+  font-size: 24px
+}
+
+.columns > div > div a.button {
+  width: 100%;
+  border-radius: 0 !important;
+  background-color: var(--primary-gray);
+  margin: 0;
+}
+
+.columns > div > div span img {
+  max-height: 250px;
+  min-height: 250px;
+  padding: 20px 0;
 }
 
 @media (width >= 900px) {
@@ -30,3 +44,6 @@
     order: unset;
   }
 }
+
+
+
